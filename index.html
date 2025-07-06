@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para Você, com Amor</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #ffd6e0, #ffffff);
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    .content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #c0392b;
+    }
+    @media (max-width: 600px) {
+      .content p {
+        font-size: 1rem;
+      }
+    }
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 50px;
+      height: 70px;
+      background-color: red;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: floatUp 10s infinite ease-in;
+      opacity: 0.7;
+      z-index: 1;
+    }
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2
