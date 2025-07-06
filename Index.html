@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para Você, com Amor</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #ffd6e0, #ffffff);
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    .content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #c0392b;
+    }
+    @media (max-width: 600px) {
+      .content p {
+        font-size: 1rem;
+      }
+    }
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 50px;
+      height: 70px;
+      background-color: red;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: floatUp 10s infinite ease-in;
+      opacity: 0.7;
+      z-index: 1;
+    }
+    .balloon::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 20px;
+      background-color: #888;
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <p>
+      Desde que você entrou na minha vida, tudo mudou de forma tão intensa que é impossível colocar em palavras o quanto sua presença significa para mim.<br><br>
+      Mesmo que nosso encontro seja recente, eu acredito — com todo o meu coração — no amor à primeira vista. E foi exatamente isso que aconteceu: bastou um instante para que você se tornasse essencial para mim.<br><br>
+      Não sou um mestre das palavras, admito. Mas mesmo que fosse, ainda me faltaria vocabulário para expressar tudo o que sinto por você.
+    </p>
+  </div>
+
+  <!-- Balões animados -->
+  <script>
+    function createBalloon() {
+      const balloon = document.createElement('div');
+      balloon.className = 'balloon';
+      balloon.style.left = Math.random() * 100 + 'vw';
+      balloon.style.backgroundColor = ['#ff4d4d', '#ff6666', '#ff9999'][Math.floor(Math.random() * 3)];
+      balloon.style.animationDuration = (8 + Math.random() * 4) + 's';
+      document.body.appendChild(balloon);
+      setTimeout(() => {
+        balloon.remove();
+      }, 12000);
+    }
+    setInterval(createBalloon, 800);
+  </script>
+</body>
+</html>
